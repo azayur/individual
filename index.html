@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FlightPool</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="css/normalize.css" />
+    <link rel="stylesheet" href="css/animate.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/simple-adaptive-slider.css"/>
+    <script src="js/wow.min.js"></script>
+    <style>
+        /* стили для элемента body */
+        body {
+            margin: 0;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial,
+                sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+        }
+        /* дополнительные стили для этого примера */
+        .itcss__items {
+            counter-reset: slide;
+        }
+        .itcss__item {
+            counter-increment: slide;
+        }
+        .itcss__item>div::before {
+            content: counter(slide);
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            color: #fff;
+            font-style: italic;
+            font-size: 32px;
+            font-weight: bold;
+        }
+    </style>
+    <!-- Подключаем JS слайдера -->
+    <script defer src="js/simple-adaptive-slider.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // активация слайдера
+            new ItcSimpleSlider('.itcss', {
+                loop: true,
+                autoplay: true,
+                swipe: true,
+            });
+        });
+    </script>
+    <script>
+        $(window).load(function () {
+            $('.container').find('img').each(function () {
+                var imgClass = (this.width / this.height > 1) ? 'wide' : 'tall';
+                $(this).addClass(imgClass);
+            })
+        });
+    </script>
+</head>
+<body>
+<header class="header">
+    <a href="index.html" class="logo wow animate__fadeInLeft">
+        <img src="img/logo.png" class="logo"/>
+    </a>
+    <div class="buttons">
+        <button class="button button-primary">
+            <img src="img/contact.svg" class="button-icon" />
+            <span class="button-text">Контакты</span>
+        </button>
+        <button class="button button-primary">
+            <img src="img/ticket.svg" class="button-icon" />
+            <span class="button-text">Акции</span>
+        </button>
+        <a href="regist.html" class="btns-link">
+            <button class="button" id="card-button">
+                <img src="img/home.svg" class="button-icon" />
+                <span class="button-text">Личный кабинет</span>
+            </button>
+        </a>
+    </div>
+</header>
+<main class="main">
+    <div class="itcss">
+        <div class="itcss__wrapper">
+            <div class="itcss__items">
+                <div class="itcss__item">
+                    <section>
+                        <img src="img/air1.jpg" alt="">
+                        <section class="itcss__item-text text1" >
+                            <h1>Возврат и обмен билетов</h1>
+                        </section>
+                    </section>
+                </div>
+                <div class="itcss__item">
+                    <section>
+                        <img src="img/air2.jpg" alt="">
+                        <section class="itcss__item-text text2">
+                            <h1>Лучшие предложения</h1>
+                        </section>
+                    </section>
+                </div>
+                <div class="itcss__item">
+                    <section>
+                        <img src="img/air3.jpg" alt="">
+                        <section class="itcss__item-text text3">
+                            <p>Видеться чаще</p>
+                        </section>
+                    </section>
+                </div>
+                <div class="itcss__item">
+                    <section>
+                        <img src="img/air4.jpg" alt="">
+                        <section class="itcss__item-text text4">
+                            <h1>Все снова включено</h1>
+                        </section>
+                    </section>
+                </div>
+            </div>
+        </div>
+        <button class="itcss__btn itcss__btn_prev" role="button" data-slide="prev"></button>
+        <button class="itcss__btn itcss__btn_next" role="button" data-slide="next"></button>
+    </div>
+    <div class="container">
+        <section class="restaurants">
+            <div class="section-heading">
+                <h2 class="section-title">Акции</h2>
+                <div class="card-info">
+                    <div class="rating">
+                        <img src="img/rating.svg" alt="rating" />
+                        5.0
+                    </div>
+                    <div class="price">От 19000 ₽</div>
+                    <div class="category">Билеты</div>
+                </div>
+            </div>
+            <div class="cards">
+                <a href="index.html" class="card wow animate__zoomIn" data-wow-delay="0.8s">
+                    <img src="img/sale1.jpg" alt="image" class="card-img" />
+                    <div class="card-text">
+                        <div class="card-heading">
+                            <h3 class="card-title card-title-reg">Билеты на море.</h3>
+                        </div>
+                        <div class="card-info">
+                            <div class="ingredients">
+                                Билеты в солнечный Крым!
+                            </div>
+                        </div>
+                        <div class="card-buttons">
+                            <button class="button button-primary">
+                                <span class="button-card-text">Выберите дату</span>
+                                <img src="img/calendar.svg" alt="card-button-shopping" class="button-card-img" />
+                            </button>
+                            <strong class="card-price-bold">19000 ₽</strong>
+                        </div>
+                    </div>
+                </a>
+                <a href="index.html" class="card wow animate__zoomIn" data-wow-delay="1s">
+                    <img src="img/sale2.jpg" alt="image" class="card-img" />
+                    <div class="card-text">
+                        <div class="card-heading">
+                            <h3 class="card-title card-title-reg">Билеты в Америку.</h3>
+                        </div>
+                        <div class="card-info">
+                            <div class="ingredients">
+                                Калифорния ждет вас!
+                            </div>
+                        </div>
+                        <div class="card-buttons">
+                            <button class="button button-primary">
+                                <span class="button-card-text">Выберите дату</span>
+                                <img src="img/calendar.svg" alt="card-button-shopping" class="button-card-img" />
+                            </button>
+                            <strong class="card-price-bold">39500 ₽</strong>
+                        </div>
+                    </div>
+                </a>
+                <a href="index.html" class="card wow animate__zoomIn" data-wow-delay="1.2s">
+                    <img src="img/sale3.jpg" alt="image" class="card-img" />
+                    <div class="card-text">
+                        <div class="card-heading">
+                            <h3 class="card-title card-title-reg">Билеты в Европпу.</h3>
+                        </div>
+                        <div class="card-info">
+                            <div class="ingredients">
+                                Амстердам и его прекрасные виды!
+                            </div>
+                        </div>
+                        <div class="card-buttons">
+                            <button class="button button-primary">
+                                <span class="button-card-text">Выберите дату</span>
+                                <img src="img/calendar.svg" alt="card-button-shopping" class="button-card-img" />
+                            </button>
+                            <strong class="card-price-bold">25000 ₽</strong>
+                        </div>
+                    </div>
+                </a>
+                <a href="index.html" class="card wow animate__zoomIn" data-wow-delay="0.8s">
+                    <img src="img/sale4.jpeg" alt="image" class="card-img" />
+                    <div class="card-text">
+                        <div class="card-heading">
+                            <h3 class="card-title card-title-reg">Билеты + жильё. </h3>
+                        </div>
+                        <div class="card-info">
+                            <div class="ingredients">
+                                Билеты и жилье на неделю!!!
+                            </div>
+                        </div>
+                        <div class="card-buttons">
+                            <button class="button button-primary">
+                                <span class="button-card-text">Выберите дату</span>
+                                <img src="img/calendar.svg" alt="card-button-shopping" class="button-card-img" />
+                            </button>
+                            <strong class="card-price-bold">45000 ₽</strong>
+                        </div>
+                    </div>
+                </a>
+                <a href="index.html" class="card wow animate__zoomIn" data-wow-delay="1s">
+                    <img src="img/sale5.jpg" alt="image" class="card-img" />
+                    <div class="card-text">
+                        <div class="card-heading">
+                            <h3 class="card-title card-title-reg">Билеты + еда</h3>
+                        </div>
+                        <div class="card-info">
+                            <div class="ingredients">
+                                Боинг + питание в самолете!!!
+                            </div>
+                        </div>
+                        <div class="card-buttons">
+                            <button class="button button-primary">
+                                <span class="button-card-text">Выберите дату</span>
+                                <img src="img/calendar.svg" alt="card-button-shopping" class="button-card-img" />
+                            </button>
+                            <strong class="card-price-bold">30000 ₽</strong>
+                        </div>
+                    </div>
+                </a>
+                <a href="admin.html" class="card wow animate__zoomIn" data-wow-delay="1.2s">
+                    <img src="img/sale6.jpg" alt="image" class="card-img" />
+                    <div class="card-text">
+                        <div class="card-heading">
+                            <h3 class="card-title card-title-reg">Билеты + экскурсии</h3>
+                        </div>
+                        <div class="card-info">
+                            <div class="ingredients">
+                                Лучший самолет как и экскурсии!!!
+                            </div>
+                        </div>
+                        <div class="card-buttons">
+                            <button class="button button-primary">
+                                <span class="button-card-text">Выберите дату</span>
+                                <img src="img/calendar.svg" alt="card-button-shopping" class="button-card-img" />
+                            </button>
+                            <strong class="card-price-bold">65000 ₽</strong>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </section>
+    </div>
+    <section class="trust">
+        <div class="container-form">
+            <h2 class="section-title-form">Оставить заявку</h2>
+            <div class="contacts-block">
+                <form action="#" class="contacts-form">
+                    <h4 class="fomr-title">Оставьте заявку и мы будем вас оповещать о новых скидках</h4>
+                    <input type="email" class="input input-email" placeholder="Введите почту">
+                    <button class="button form-button">Подписаться на рассылку</button>
+                </form>
+            </div>
+        </div>
+        <div class="trust-block">
+            <h2 class="section-title-form">О компании</h2>
+            <p class="trust-block-info-text">
+                FlightPool - ключевая компания Российского рынка по продаже авиобилетов.
+                Специализируется на качестве и оперативности полетов.
+                Заботиться о кажом клиенте и его здоровье.
+                Миллионы положительных отзывов.
+            </p>
+            <div class="trust-block-text">
+                <div>
+                    <h1 class="trust-rating">0+</h1>
+                    <p class="trust-text">Перевозем в комфорте даже животных</p>
+                </div>
+                <div>
+                    <h1 class="trust-rating">500+</h1>
+                    <p class="trust-text">Самолетов по всей России</p>
+                </div>
+                <div>
+                    <h1 class="trust-rating">10 млн+</h1>
+                    <p class="trust-text">Более 10 миллионов положительных отзывов</p>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+<footer class="footer">
+    <div class="container">
+        <div class="footer-block">
+            <nav class="footer-nav">
+                <a>Телефон: 8 (800) 100-10-10;</a>
+            </nav>
+            <div class="social-links">
+                <a href="#" class="social-link"><img src="img/insta.svg" alt="instagram" /></a>
+                <a href="#" class="social-link"><img src="img/fb.svg" alt="facebook" /></a>
+                <a href="#" class="social-link"><img src="img/vk.svg" alt="vkontakte" /></a>
+            </div>
+        </div>
+    </div>
+</footer>
+</body>
+</html>
